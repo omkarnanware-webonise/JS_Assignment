@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to open a new browser window.</p>
+
+<script>
+    let  tab=[];
+  
+    function openTab() {    
+              
+            for(let i=0;i<5;i++)
+            {
+               tab[i]=window.open('https://www.webonise.com','_blank');
+            }    
+
+            let i=0;
+
+        setInterval(() => {
+            if(tab.length > i)
+            {
+                tab[i].close();
+                tab[i++];
+            }
+        },5000)  
+ }     
+
+ function stopExecution()
+ {
+    return window.stop();
+ }
+
+</script>
+
+<button onclick="openTab()">Click</button>
+<button onclick="stopExecution()">Stop</button>
+
+</body>
+</html>
+
+
